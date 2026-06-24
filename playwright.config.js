@@ -13,11 +13,25 @@ const config=({
   },
   reporter:'html',
   use: {
-    browserName: 'chromium',
-    headless: false
-
+    baseURL: 'https://eventhub.rahulshettyacademy.com',
+    headless: false,
   },
-  
+   projects: [
+    {
+      name: 'chromium',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
+    {
+      name: 'firefox',
+      use: {
+        ...devices['Desktop Firefox'],
+      },
+    },
+  ],
 });
+  
+
 module.exports =config
 
